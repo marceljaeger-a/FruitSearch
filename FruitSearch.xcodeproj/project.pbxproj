@@ -11,6 +11,11 @@
 		9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242622C4664B7004EABE1 /* ContentView.swift */; };
 		9FE242652C4664B8004EABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE242642C4664B8004EABE1 /* Assets.xcassets */; };
 		9FE242682C4664B8004EABE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE242672C4664B8004EABE1 /* Preview Assets.xcassets */; };
+		9FE2426F2C466981004EABE1 /* OpenFoodFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2426E2C466981004EABE1 /* OpenFoodFactsService.swift */; };
+		9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242702C468827004EABE1 /* FoodProduct.swift */; };
+		9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242722C46883A004EABE1 /* FoodProductList.swift */; };
+		9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */; };
+		9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242772C468A38004EABE1 /* FoodProductListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		9FE242622C4664B7004EABE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FE242642C4664B8004EABE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FE242672C4664B8004EABE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9FE2426E2C466981004EABE1 /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
+		9FE242702C468827004EABE1 /* FoodProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProduct.swift; sourceTree = "<group>"; };
+		9FE242722C46883A004EABE1 /* FoodProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductList.swift; sourceTree = "<group>"; };
+		9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsError.swift; sourceTree = "<group>"; };
+		9FE242772C468A38004EABE1 /* FoodProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,8 @@
 			children = (
 				9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */,
 				9FE242622C4664B7004EABE1 /* ContentView.swift */,
+				9FE242772C468A38004EABE1 /* FoodProductListView.swift */,
+				9FE242762C468883004EABE1 /* Service */,
 				9FE242642C4664B8004EABE1 /* Assets.xcassets */,
 				9FE242662C4664B8004EABE1 /* Preview Content */,
 			);
@@ -65,6 +77,17 @@
 				9FE242672C4664B8004EABE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9FE242762C468883004EABE1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9FE2426E2C466981004EABE1 /* OpenFoodFactsService.swift */,
+				9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */,
+				9FE242722C46883A004EABE1 /* FoodProductList.swift */,
+				9FE242702C468827004EABE1 /* FoodProduct.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */,
+				9FE2426F2C466981004EABE1 /* OpenFoodFactsService.swift in Sources */,
+				9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
+				9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */,
+				9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
