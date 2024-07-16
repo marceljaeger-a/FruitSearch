@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import PhotosUI
+import CoreML
 
 struct ContentView: View {
     @State var list: FoodProductList?
     @State var isLoading: Bool = false
+    
+    @State var isSelectPhotoViewShown = false
     
     private func loadFoodPruducts() async {
         isLoading = true
@@ -38,6 +42,14 @@ struct ContentView: View {
                     }
                 }
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            isSelectPhotoViewShown.toggle()
+                        } label: {
+                            Image(systemName: "photo.stack")
+                        }
+                    }
+                    
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             Task {
@@ -48,9 +60,14 @@ struct ContentView: View {
                         }
                     }
                 }
+                .navigationDestination(isPresented: $isSelectPhotoViewShown) {
+                    SelectPhotoView()
+                }
+                
         }
     }
 }
+
 
 #Preview {
     ContentView()

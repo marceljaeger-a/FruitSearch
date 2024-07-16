@@ -16,6 +16,10 @@
 		9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242722C46883A004EABE1 /* FoodProductList.swift */; };
 		9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */; };
 		9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242772C468A38004EABE1 /* FoodProductListView.swift */; };
+		9FE2427B2C46B461004EABE1 /* FruitDiscover.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2427A2C46B461004EABE1 /* FruitDiscover.mlmodel */; };
+		9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */; };
+		9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242812C46F802004EABE1 /* FoodPredictionError.swift */; };
+		9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		9FE242722C46883A004EABE1 /* FoodProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductList.swift; sourceTree = "<group>"; };
 		9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsError.swift; sourceTree = "<group>"; };
 		9FE242772C468A38004EABE1 /* FoodProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductListView.swift; sourceTree = "<group>"; };
+		9FE2427A2C46B461004EABE1 /* FruitDiscover.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FruitDiscover.mlmodel; sourceTree = "<group>"; };
+		9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionService.swift; sourceTree = "<group>"; };
+		9FE242812C46F802004EABE1 /* FoodPredictionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionError.swift; sourceTree = "<group>"; };
+		9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +71,10 @@
 			children = (
 				9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */,
 				9FE242622C4664B7004EABE1 /* ContentView.swift */,
+				9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */,
 				9FE242772C468A38004EABE1 /* FoodProductListView.swift */,
-				9FE242762C468883004EABE1 /* Service */,
+				9FE242762C468883004EABE1 /* OpenFoodFactsService */,
+				9FE2427E2C46F79E004EABE1 /* MachineLearning */,
 				9FE242642C4664B8004EABE1 /* Assets.xcassets */,
 				9FE242662C4664B8004EABE1 /* Preview Content */,
 			);
@@ -79,7 +89,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9FE242762C468883004EABE1 /* Service */ = {
+		9FE242762C468883004EABE1 /* OpenFoodFactsService */ = {
 			isa = PBXGroup;
 			children = (
 				9FE2426E2C466981004EABE1 /* OpenFoodFactsService.swift */,
@@ -87,7 +97,17 @@
 				9FE242722C46883A004EABE1 /* FoodProductList.swift */,
 				9FE242702C468827004EABE1 /* FoodProduct.swift */,
 			);
-			path = Service;
+			path = OpenFoodFactsService;
+			sourceTree = "<group>";
+		};
+		9FE2427E2C46F79E004EABE1 /* MachineLearning */ = {
+			isa = PBXGroup;
+			children = (
+				9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */,
+				9FE242812C46F802004EABE1 /* FoodPredictionError.swift */,
+				9FE2427A2C46B461004EABE1 /* FruitDiscover.mlmodel */,
+			);
+			path = MachineLearning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +185,11 @@
 				9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
+				9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */,
 				9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */,
+				9FE2427B2C46B461004EABE1 /* FruitDiscover.mlmodel in Sources */,
+				9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */,
+				9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */,
 				9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
