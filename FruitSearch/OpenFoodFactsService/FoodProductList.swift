@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoodProductList: Codable {
+struct FoodProductList: Codable, Hashable{
     var count: Int
     var page: Int
     var pageCount: Int

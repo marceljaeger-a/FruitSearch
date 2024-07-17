@@ -20,6 +20,10 @@
 		9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */; };
 		9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242812C46F802004EABE1 /* FoodPredictionError.swift */; };
 		9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */; };
+		9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242852C46FA4B004EABE1 /* CameraView.swift */; };
+		9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242882C470B39004EABE1 /* CameraPreviewView.swift */; };
+		9FE2428B2C470B76004EABE1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2428A2C470B76004EABE1 /* Camera.swift */; };
+		9FE2428D2C470D0F004EABE1 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2428C2C470D0F004EABE1 /* CameraError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionService.swift; sourceTree = "<group>"; };
 		9FE242812C46F802004EABE1 /* FoodPredictionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionError.swift; sourceTree = "<group>"; };
 		9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoView.swift; sourceTree = "<group>"; };
+		9FE242852C46FA4B004EABE1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		9FE242882C470B39004EABE1 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		9FE2428A2C470B76004EABE1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		9FE2428C2C470D0F004EABE1 /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,7 @@
 				9FE242622C4664B7004EABE1 /* ContentView.swift */,
 				9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */,
 				9FE242772C468A38004EABE1 /* FoodProductListView.swift */,
+				9FE242872C470B24004EABE1 /* Camera */,
 				9FE242762C468883004EABE1 /* OpenFoodFactsService */,
 				9FE2427E2C46F79E004EABE1 /* MachineLearning */,
 				9FE242642C4664B8004EABE1 /* Assets.xcassets */,
@@ -108,6 +117,17 @@
 				9FE2427A2C46B461004EABE1 /* FruitDiscover.mlmodel */,
 			);
 			path = MachineLearning;
+			sourceTree = "<group>";
+		};
+		9FE242872C470B24004EABE1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				9FE242852C46FA4B004EABE1 /* CameraView.swift */,
+				9FE242882C470B39004EABE1 /* CameraPreviewView.swift */,
+				9FE2428A2C470B76004EABE1 /* Camera.swift */,
+				9FE2428C2C470D0F004EABE1 /* CameraError.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,15 +201,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */,
+				9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */,
 				9FE2426F2C466981004EABE1 /* OpenFoodFactsService.swift in Sources */,
 				9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */,
+				9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
 				9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */,
 				9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */,
 				9FE2427B2C46B461004EABE1 /* FruitDiscover.mlmodel in Sources */,
 				9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */,
+				9FE2428D2C470D0F004EABE1 /* CameraError.swift in Sources */,
 				9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */,
+				9FE2428B2C470B76004EABE1 /* Camera.swift in Sources */,
 				9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,11 +351,11 @@
 				DEVELOPMENT_TEAM = 5B4LV69C8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,11 +380,11 @@
 				DEVELOPMENT_TEAM = 5B4LV69C8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
