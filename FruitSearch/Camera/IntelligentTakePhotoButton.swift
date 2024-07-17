@@ -86,7 +86,7 @@ struct IntelligentTakePhotoButton : View {
                         
                         loadFoodProductsButton
                     }else {
-                        Text("It`s not a fruit!")
+                        Text("Not identifiable!")
                             .font(.title3)
                             .bold()
                             .foregroundStyle(.secondary)
