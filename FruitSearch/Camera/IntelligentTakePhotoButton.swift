@@ -85,8 +85,7 @@ struct IntelligentTakePhotoButton : View {
                 TakePhotoButton(camera: camera)
             }
         }
-        .background(modalColor, in: .rect)
-        .clipShape(modalshape)
+        .background(modalColor.shadow(.drop(radius: 5)), in: modalshape)
         .containerShape(.rect(cornerRadius: 25))
         .padding()
         .transaction(value: camera.latestImage, { transaction in
