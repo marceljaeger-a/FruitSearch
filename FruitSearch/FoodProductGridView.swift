@@ -27,6 +27,8 @@ struct FoodProductGridView : View {
             }
         }
         .contentMargins(20, for: .scrollContent)
+        .navigationTitle("Products")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -39,5 +41,5 @@ struct FoodProductGridView : View {
         .init(code: "", nutritionGrades: "C", productName: "Apple juice"),
         .init(code: "", nutritionGrades: "B", productName: "Apple juice"),
         .init(code: "", nutritionGrades: "A", productName: "Apple juice")
-                            ])
+    ])
 }

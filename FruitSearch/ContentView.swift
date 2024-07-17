@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $navPath) {
-           CameraView(navPath: $navPath)
+            CameraView(navPath: $navPath)
                 .navigationDestination(for: FoodProductList.self) { list in
                     FoodProductGridView(products: list.products)
                 }

@@ -16,6 +16,8 @@ struct IntelligentTakePhotoButton : View {
     @State var isPredicting = false
     @State var isLoading: Bool = false
     
+    @State var loadingError: Bool = false
+    
     let predictionService = FoodPredictionService()
     
     var modalColor: AnyShapeStyle {
@@ -47,13 +49,20 @@ struct IntelligentTakePhotoButton : View {
                 navPath.append(list)
             }catch OpenFoodFactsError.invalidURL {
                 print("Invalid URL")
+                loadingError = true
             } catch OpenFoodFactsError.invalidRespsone {
                 print("Invalid Response")
+                loadingError = true
             } catch OpenFoodFactsError.invlaidData {
                 print("Invalid Data")
+                loadingError = true
             } catch {
                 print("Unknown Error")
+                loadingError = true
             }
+        }
+        if loadingError {
+            loadingError = false
         }
         isLoading = false
     }
@@ -148,16 +157,21 @@ struct IntelligentTakePhotoButton : View {
                 ProgressView()
                     .progressViewStyle(.circular)
             }else {
-                Text("Show products")
+                if loadingError {
+                    Text("Loading failed! Try again.")
+                } else {
+                    Text("Show products")
+                }
             }
         }
+        .foregroundStyle(loadingError ? .red : .accentColor)
         .disabled(isLoading)
     }
     
     var deletePhotoButton: some View {
         Button {
             camera.latestCGImage = nil
-            print("Debug")
+            loadingError = false
         } label: {
             Image(systemName: "xmark")
         }
@@ -171,15 +185,20 @@ struct IntelligentTakePhotoButton : View {
 struct TakePhotoButton : View {
     let camera: Camera
     
+    @State var isTakingPhoto: Bool = false
+    
     var body: some View {
         Button {
             Task {
+                isTakingPhoto.toggle()
                 await camera.take()
             }
         } label: {
             Image(systemName: "camera.shutter.button.fill")
                 .foregroundStyle(.background)
                 .font(.title2)
+                .symbolEffect(.bounce, value: isTakingPhoto)
+                .sensoryFeedback(.impact, trigger: isTakingPhoto)
                 .padding(25)
         }
     }
