@@ -28,19 +28,32 @@ struct IntelligentTakePhotoButton : View {
     
     private func loadFoodPruducts() async {
         isLoading = true
-        do {
-            let service = OpenFoodFactsService()
-            let list = try await service.fetchList(searchBy: "Tomaten")
-            isLoading = false
-            navPath.append(list)
-        }catch OpenFoodFactsError.invalidURL {
-            print("Invalid URL")
-        } catch OpenFoodFactsError.invalidRespsone {
-            print("Invalid Response")
-        } catch OpenFoodFactsError.invlaidData {
-            print("Invalid Data")
-        } catch {
-            print("Unknown Error")
+        if let predictedFood {
+            do {
+                let service = OpenFoodFactsService()
+                
+                let searchingKeyWord: String = { () -> String in
+                    if predictedFood == "Tomato" {
+                        return "Tomaten"
+                    }else if predictedFood == "Banana" {
+                        return "Banane"
+                    } else {
+                        return predictedFood
+                    }
+                }()
+                
+                let list = try await service.fetchList(searchBy: searchingKeyWord)
+                isLoading = false
+                navPath.append(list)
+            }catch OpenFoodFactsError.invalidURL {
+                print("Invalid URL")
+            } catch OpenFoodFactsError.invalidRespsone {
+                print("Invalid Response")
+            } catch OpenFoodFactsError.invlaidData {
+                print("Invalid Data")
+            } catch {
+                print("Unknown Error")
+            }
         }
         isLoading = false
     }
@@ -60,7 +73,7 @@ struct IntelligentTakePhotoButton : View {
     }
     
     var body: some View {
-        Group {
+        ZStack(alignment: .bottom) {
             if let image = camera.latestImage {
                 VStack(spacing: 15) {
                     HStack {
@@ -71,16 +84,12 @@ struct IntelligentTakePhotoButton : View {
                     image
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 300)
                         .clipShape(.containerRelative)
-                        .transaction(value: camera.latestImage) { transaction in
-                            if camera.latestImage == nil {
-                                transaction.animation = nil
-                            }
-                        }
+                        .frame(width: 300)
+                        
                     
                     if let predictedFood {
-                        Text(predictedFood)
+                        Label(predictedFood, systemImage: "sparkles")
                             .font(.title)
                             .bold()
                         
@@ -93,16 +102,33 @@ struct IntelligentTakePhotoButton : View {
                     }
                 }
                 .padding()
-            } else {
-                TakePhotoButton(camera: camera)
             }
+            
+            TakePhotoButton(camera: camera)
+                .opacity(camera.latestImage == nil ? 1.0 : 0.0)
+                .transaction(value: camera.latestImage) { transaction in
+                    if camera.latestImage == nil {
+                        transaction.animation = .smooth.delay(0.3)
+                    }else {
+                        transaction.animation = nil
+                    }
+                    
+                }
+        }
+        .transaction(value: camera.latestImage) { transaction in
+            if camera.latestImage == nil {
+                transaction.animation = nil
+            }else {
+                transaction.animation = .smooth.delay(0.3)
+            }
+            
         }
         .background(modalColor.shadow(.drop(radius: 5)), in: modalshape)
         .containerShape(.rect(cornerRadius: 25))
         .padding()
         .transaction(value: camera.latestImage, { transaction in
             if camera.latestImage == nil {
-                transaction.animation = .smooth
+                transaction.animation = .bouncy
             }else {
                 transaction.animation = .bouncy
             }
@@ -137,7 +163,7 @@ struct IntelligentTakePhotoButton : View {
         }
         .buttonStyle(.bordered)
         .buttonBorderShape(.circle)
-        .controlSize(.large)
+        .controlSize(.regular)
     }
 }
 
