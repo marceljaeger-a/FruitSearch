@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct FoodProduct: Codable, Identifiable, Hashable {
     let id = UUID()
@@ -13,6 +14,15 @@ struct FoodProduct: Codable, Identifiable, Hashable {
     var code: String
     var nutritionGrades: String
     var productName: String
+    
+    var formattedNutriScore: String {
+        let validGrades = ["A", "B", "C", "D", "E"]
+        if validGrades.contains { $0 == nutritionGrades.uppercased() } {
+            return nutritionGrades.uppercased()
+        }else {
+            return ""
+        }
+    }
 }
 
 extension FoodProduct {
@@ -31,6 +41,23 @@ extension FoodProduct {
             return URL(string: "https://images.openfoodfacts.org/images/products/\(resultCode)/1.jpg")
         }else {
             return nil
+        }
+    }
+    
+    var nutritionGradesColor: Color {
+        switch nutritionGrades.uppercased() {
+        case "A":
+            .green
+        case "B":
+            .lightGreen
+        case "C":
+            .yellow
+        case "D":
+            .orange
+        case "E":
+            .red
+        default:
+            .secondary
         }
     }
 }

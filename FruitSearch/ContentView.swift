@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationStack(path: $navPath) {
            CameraView(navPath: $navPath)
                 .navigationDestination(for: FoodProductList.self) { list in
-                    FoodProductListView(list: list)
+                    FoodProductGridView(products: list.products)
                 }
         }
     }

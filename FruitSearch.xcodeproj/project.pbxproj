@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F52573D2C479EFD004CACE6 /* FoodProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573C2C479EFD004CACE6 /* FoodProductView.swift */; };
+		9F52573F2C47B0D1004CACE6 /* FoodProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573E2C47B0D1004CACE6 /* FoodProductGridView.swift */; };
 		9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */; };
 		9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242622C4664B7004EABE1 /* ContentView.swift */; };
 		9FE242652C4664B8004EABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE242642C4664B8004EABE1 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F52573C2C479EFD004CACE6 /* FoodProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductView.swift; sourceTree = "<group>"; };
+		9F52573E2C47B0D1004CACE6 /* FoodProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductGridView.swift; sourceTree = "<group>"; };
 		9FE2425D2C4664B7004EABE1 /* FruitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitSearchApp.swift; sourceTree = "<group>"; };
 		9FE242622C4664B7004EABE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				9FE242622C4664B7004EABE1 /* ContentView.swift */,
 				9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */,
 				9FE242772C468A38004EABE1 /* FoodProductListView.swift */,
+				9F52573C2C479EFD004CACE6 /* FoodProductView.swift */,
+				9F52573E2C47B0D1004CACE6 /* FoodProductGridView.swift */,
 				9FE242872C470B24004EABE1 /* Camera */,
 				9FE242762C468883004EABE1 /* OpenFoodFactsService */,
 				9FE2427E2C46F79E004EABE1 /* MachineLearning */,
@@ -202,8 +208,10 @@
 			files = (
 				9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */,
 				9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */,
+				9F52573F2C47B0D1004CACE6 /* FoodProductGridView.swift in Sources */,
 				9FE2426F2C466981004EABE1 /* OpenFoodFactsService.swift in Sources */,
 				9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */,
+				9F52573D2C479EFD004CACE6 /* FoodProductView.swift in Sources */,
 				9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
