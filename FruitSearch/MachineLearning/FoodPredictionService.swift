@@ -11,7 +11,7 @@ import SwiftUI
 
 struct FoodPredictionService {
     @MainActor 
-    func predictFruit(in image: Image) throws -> String {
+    func predictFruit(in image: Image) async throws -> String? {
         let renderer = ImageRenderer(content: image)
         guard let cgImage = renderer.cgImage else {
             throw FoodPredictionError.invalidImage
@@ -20,11 +20,18 @@ struct FoodPredictionService {
         do {
             let config = MLModelConfiguration()
             let model = try FruitDiscover(configuration: config)
-         
             let input = try FruitDiscoverInput(imageWith: cgImage)
-            let output = try model.prediction(input: input)
+            let output = try await model.prediction(input: input)
             
-            return output.target
+            let target = output.target
+            let predictions = output.targetProbability
+            let probability = predictions[target]
+            guard let probability, probability > 0.8 else {
+                print(probability?.description)
+                return nil
+            }
+        
+            return target
         } catch {
             throw FoodPredictionError.failedPrediction
         }

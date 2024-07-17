@@ -12,7 +12,7 @@ struct IntelligentTakePhotoButton : View {
     let camera: Camera
     @Binding var navPath: NavigationPath
     
-    @State var predictedFood: String = ""
+    @State var predictedFood: String? = nil
     @State var isPredicting = false
     @State var isLoading: Bool = false
     
@@ -30,7 +30,7 @@ struct IntelligentTakePhotoButton : View {
         isLoading = true
         do {
             let service = OpenFoodFactsService()
-            let list = try await service.fetchList(searchBy: predictedFood)
+            let list = try await service.fetchList(searchBy: "Tomaten")
             isLoading = false
             navPath.append(list)
         }catch OpenFoodFactsError.invalidURL {
@@ -73,12 +73,24 @@ struct IntelligentTakePhotoButton : View {
                         .scaledToFit()
                         .frame(width: 300)
                         .clipShape(.containerRelative)
-
-                    Text(predictedFood)
-                        .font(.title)
-                        .bold()
+                        .transaction(value: camera.latestImage) { transaction in
+                            if camera.latestImage == nil {
+                                transaction.animation = nil
+                            }
+                        }
                     
-                    loadFoodProductsButton
+                    if let predictedFood {
+                        Text(predictedFood)
+                            .font(.title)
+                            .bold()
+                        
+                        loadFoodProductsButton
+                    }else {
+                        Text("It`s not a fruit!")
+                            .font(.title3)
+                            .bold()
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 .padding()
             } else {

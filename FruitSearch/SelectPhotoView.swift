@@ -14,7 +14,7 @@ struct SelectPhotoView: View {
     @State var selectedPickerItem: PhotosPickerItem? = nil
     
     @State var selectedImage: Image? = nil
-    @State var fruit: String = "No fruit"
+    @State var fruit: String? = nil
     
     func loadImage() async {
         guard let selectedPickerItem else {
@@ -41,7 +41,7 @@ struct SelectPhotoView: View {
                             Task {
                                 let service = FoodPredictionService()
                                 do {
-                                    fruit = try service.predictFruit(in: selectedImage)
+                                    fruit = try await service.predictFruit(in: selectedImage)
                                 } catch FoodPredictionError.invalidImage {
                                     print("Invalid image")
                                 } catch FoodPredictionError.failedPrediction {
@@ -51,7 +51,7 @@ struct SelectPhotoView: View {
                             }
                         }
                     
-                    Text(fruit)
+                    Text(fruit ?? "")
                 }
             }else {
                 Text("Selected Image")
