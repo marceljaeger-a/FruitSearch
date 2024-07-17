@@ -27,14 +27,15 @@ struct FoodProductView : View {
         .overlay(alignment: .bottom) {
             HStack {
                 Text(product.productName)
-                    .lineLimit(1)
-                    .font(.body)
+                    .lineLimit(1, reservesSpace: true)
+                    .font(.caption)
                 
                 Spacer()
                 
                 Text(product.formattedNutriScore)
                     .font(.title3)
                     .lineLimit(1)
+                    .fontDesign(.monospaced)
                     .bold()
                     .foregroundStyle(product.nutritionGradesColor.gradient)
             }

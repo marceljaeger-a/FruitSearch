@@ -102,7 +102,7 @@ class Camera: NSObject, AVCapturePhotoCaptureDelegate {
         return isAuthorized
     }
     
-    func take() {
+    func take() async {
         output.capturePhoto(with: .init(), delegate: self)
     }
 }

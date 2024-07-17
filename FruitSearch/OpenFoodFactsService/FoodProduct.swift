@@ -20,7 +20,7 @@ struct FoodProduct: Codable, Identifiable, Hashable {
         if validGrades.contains { $0 == nutritionGrades.uppercased() } {
             return nutritionGrades.uppercased()
         }else {
-            return ""
+            return "?"
         }
     }
 }

@@ -26,7 +26,7 @@ struct FoodProductGridView : View {
                 }
             }
         }
-        .padding()
+        .contentMargins(20, for: .scrollContent)
     }
 }
 
