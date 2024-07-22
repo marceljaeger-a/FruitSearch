@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import AVFoundation
-import UIKit
 
 struct CameraView: View {
  
