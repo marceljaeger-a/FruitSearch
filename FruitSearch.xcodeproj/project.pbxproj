@@ -10,7 +10,8 @@
 		9F52573D2C479EFD004CACE6 /* FoodProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573C2C479EFD004CACE6 /* FoodProductView.swift */; };
 		9F52573F2C47B0D1004CACE6 /* FoodProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573E2C47B0D1004CACE6 /* FoodProductGridView.swift */; };
 		9F5257412C47BA98004CACE6 /* IntelligentTakePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */; };
-		9FC5154F2C47E11A0020E1E6 /* FruitDiscover.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5154E2C47E11A0020E1E6 /* FruitDiscover.mlmodel */; };
+		9FA429D72C4E885A00B9617D /* FruitDiscover.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */; };
+		9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */; };
 		9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */; };
 		9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242622C4664B7004EABE1 /* ContentView.swift */; };
 		9FE242652C4664B8004EABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE242642C4664B8004EABE1 /* Assets.xcassets */; };
@@ -33,7 +34,8 @@
 		9F52573C2C479EFD004CACE6 /* FoodProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductView.swift; sourceTree = "<group>"; };
 		9F52573E2C47B0D1004CACE6 /* FoodProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductGridView.swift; sourceTree = "<group>"; };
 		9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentTakePhotoButton.swift; sourceTree = "<group>"; };
-		9FC5154E2C47E11A0020E1E6 /* FruitDiscover.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FruitDiscover.mlmodel; sourceTree = "<group>"; };
+		9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FruitDiscover.mlmodel; sourceTree = "<group>"; };
+		9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FruitDiscover old.mlmodel"; sourceTree = "<group>"; };
 		9FE2425D2C4664B7004EABE1 /* FruitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitSearchApp.swift; sourceTree = "<group>"; };
 		9FE242622C4664B7004EABE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,7 +124,8 @@
 			children = (
 				9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */,
 				9FE242812C46F802004EABE1 /* FoodPredictionError.swift */,
-				9FC5154E2C47E11A0020E1E6 /* FruitDiscover.mlmodel */,
+				9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */,
+				9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */,
 			);
 			path = MachineLearning;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA429D72C4E885A00B9617D /* FruitDiscover.mlmodel in Sources */,
 				9F5257412C47BA98004CACE6 /* IntelligentTakePhotoButton.swift in Sources */,
 				9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */,
 				9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */,
@@ -220,7 +224,7 @@
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
 				9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */,
-				9FC5154F2C47E11A0020E1E6 /* FruitDiscover.mlmodel in Sources */,
+				9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */,
 				9FE242782C468A38004EABE1 /* FoodProductListView.swift in Sources */,
 				9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */,
 				9FE2428D2C470D0F004EABE1 /* CameraError.swift in Sources */,
@@ -372,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marceljaeger.FruitSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -401,7 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marceljaeger.FruitSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
