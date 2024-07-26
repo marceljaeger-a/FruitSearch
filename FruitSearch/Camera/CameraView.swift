@@ -11,18 +11,13 @@ import AVFoundation
 
 struct CameraView: View {
  
-    @Binding var navPath: NavigationPath
-    
-    @State var camera: Camera? = nil
+    @Binding var camera: Camera?
     
     var body: some View {
         Group {
             if let camera {
                 CameraPreviewView(camera: camera)
                     .ignoresSafeArea(edges: .vertical)
-                    .overlay(alignment: .bottom) {
-                        IntelligentTakePhotoButton(camera: camera, navPath: $navPath)
-                    }
                     .task {
                         do {
                             try await camera.startPreview()

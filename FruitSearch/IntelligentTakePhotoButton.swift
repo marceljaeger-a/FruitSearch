@@ -12,11 +12,8 @@ struct IntelligentTakePhotoButton : View {
     let camera: Camera
     @Binding var navPath: NavigationPath
     
-    @State var predictedFood: String? = nil
+    @State var predictedFood: FoodPrediction? = nil
     @State var isPredicting = false
-    @State var isLoading: Bool = false
-    
-    @State var loadingError: Bool = false
     
     let predictionService = FoodPredictionService()
     
@@ -28,56 +25,18 @@ struct IntelligentTakePhotoButton : View {
         camera.latestImage == nil ? AnyShape(.circle) : AnyShape(.containerRelative)
     }
     
-    private func loadFoodPruducts() async {
-        isLoading = true
-        if let predictedFood {
-            do {
-                let service = OpenFoodFactsService()
-                
-                let searchingKeyWord: String = { () -> String in
-                    if predictedFood == "Tomato" {
-                        return "Tomaten"
-                    }else if predictedFood == "Banana" {
-                        return "Banane"
-                    } else {
-                        return predictedFood
-                    }
-                }()
-                
-                let list = try await service.fetchList(searchBy: searchingKeyWord)
-                isLoading = false
-                navPath.append(list)
-            }catch OpenFoodFactsError.invalidURL {
-                print("Invalid URL")
-                loadingError = true
-            } catch OpenFoodFactsError.invalidRespsone {
-                print("Invalid Response")
-                loadingError = true
-            } catch OpenFoodFactsError.invlaidData {
-                print("Invalid Data")
-                loadingError = true
-            } catch {
-                print("Unknown Error")
-                loadingError = true
-            }
-        }
-        if loadingError {
-            loadingError = false
-        }
-        isLoading = false
-    }
-    
     private func predictFood() async {
         if let image = camera.latestImage {
             isPredicting = true
             do {
                 predictedFood = try await predictionService.predictFruit(in: image)
+                
             } catch {
                 print("Prediction failed")
             }
             isPredicting = false
         }else {
-            predictedFood = ""
+            predictedFood = nil
         }
     }
     
@@ -98,7 +57,7 @@ struct IntelligentTakePhotoButton : View {
                         
                     
                     if let predictedFood {
-                        Label(predictedFood, systemImage: "sparkles")
+                        Label(predictedFood.name, systemImage: "sparkles")
                             .font(.title)
                             .bold()
                         
@@ -149,29 +108,17 @@ struct IntelligentTakePhotoButton : View {
     
     var loadFoodProductsButton: some View {
         Button {
-            Task {
-                await loadFoodPruducts()
+            if let predictedFood {
+                navPath.append(predictedFood)
             }
         } label: {
-            if isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            }else {
-                if loadingError {
-                    Text("Loading failed! Try again.")
-                } else {
-                    Text("Show products")
-                }
-            }
+            Text("Show details")
         }
-        .foregroundStyle(loadingError ? .red : .accentColor)
-        .disabled(isLoading)
     }
     
     var deletePhotoButton: some View {
         Button {
             camera.latestCGImage = nil
-            loadingError = false
         } label: {
             Image(systemName: "xmark")
         }

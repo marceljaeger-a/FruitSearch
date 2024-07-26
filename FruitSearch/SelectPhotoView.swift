@@ -14,7 +14,7 @@ struct SelectPhotoView: View {
     @State var selectedPickerItem: PhotosPickerItem? = nil
     
     @State var selectedImage: Image? = nil
-    @State var fruit: String? = nil
+    @State var fruit: FoodPrediction? = nil
     
     func loadImage() async {
         guard let selectedPickerItem else {
@@ -51,7 +51,7 @@ struct SelectPhotoView: View {
                             }
                         }
                     
-                    Text(fruit ?? "")
+                    Text(fruit?.name ?? "")
                 }
             }else {
                 Text("Selected Image")

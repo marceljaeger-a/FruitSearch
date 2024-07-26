@@ -11,7 +11,7 @@ import SwiftUI
 
 struct FoodPredictionService {
     @MainActor 
-    func predictFruit(in image: Image) async throws -> String? {
+    func predictFruit(in image: Image) async throws -> FoodPrediction? {
         let renderer = ImageRenderer(content: image)
         guard let cgImage = renderer.cgImage else {
             throw FoodPredictionError.invalidImage
@@ -31,7 +31,7 @@ struct FoodPredictionService {
                 return nil
             }
         
-            return target
+            return .init(rawValue: target)
         } catch {
             throw FoodPredictionError.failedPrediction
         }
