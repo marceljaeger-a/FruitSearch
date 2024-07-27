@@ -11,73 +11,50 @@ import SwiftUI
 struct FoodPredictionDetailView : View {
     let prediction: FoodPrediction
     
-    @State var products: Array<FoodProduct> = []
-    
+    @State var ingredient: Ingredient? = nil
     @State var loadingError: Bool = false
     
-    private func loadFoodPruducts() async {
-        do {
-            let service = OpenFoodFactsService()
-
-            let searchingKeyWord: String = { () -> String in
-                if prediction.name == "Tomato" {
-                    return "Tomaten"
-                }else if prediction.name == "Banana" {
-                    return "Banane"
-                } else {
-                    return prediction.name
-                }
-            }()
-
-            let list = try await service.fetchList(searchBy: searchingKeyWord)
-            products = list.products
-        }catch OpenFoodFactsError.invalidURL {
-            print("Invalid URL")
-            loadingError = true
-        } catch OpenFoodFactsError.invalidRespsone {
-            print("Invalid Response")
-            loadingError = true
-        } catch OpenFoodFactsError.invlaidData {
-            print("Invalid Data")
-            loadingError = true
-        } catch {
-            print("Unknown Error")
-            loadingError = true
-        }
-    }
+    @Environment(\.dismiss) var dismissAction
     
     var body: some View {
-        ScrollView {
-            NutrientsView(nutrients: prediction.nutrients)
+        ZStack {
+            Color.clear
             
-            Section {
-                if products.isEmpty == false {
-                    FoodProductsGridView(products: products)
-                } else if loadingError {
-                    ContentUnavailableView("Loading products failed!", systemImage: "exclamationmark.triangle")
-                } else {
-                    ProgressView()
-                        .progressViewStyle(.circular)
+            if let ingredient {
+                ScrollView {
+                    NutritionView(nutrition: ingredient.nutrition, fruitImage: prediction.source)
                 }
-            } header: {
-                HStack {
-                    Text("Products")
-                        .font(.headline)
-                        .foregroundStyle(.secondary)
-                    
-                    Spacer()
-                }
+                .contentMargins(20, for: .scrollContent)
+            }else {
+                ProgressView()
+                    .progressViewStyle(.circular)
             }
         }
-        .contentMargins(20, for: .scrollContent)
+        .background(Gradient(colors: [.clear, .clear, .accentColor]))
+        .background(ignoresSafeAreaEdges: .all)
         .navigationTitle(prediction.name)
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Loading failed!", isPresented: $loadingError) {
+            Button {
+                dismissAction.callAsFunction()
+            } label: {
+                Text("Ok")
+            }
+        }
         .task {
-            await loadFoodPruducts()
+            let service = SpoonacularService()
+            do {
+                if let id = IngredientID.get(of: prediction.name) {
+                    ingredient = try await service.getIngredient(id: id)
+                }else {
+                    print("Invalid IngredientID")
+                    loadingError = true
+                }
+            }catch {
+                print(error)
+            }
         }
     }
 }
 
-#Preview {
-    FoodPredictionDetailView(prediction: .init(name: "Apple", nutrients: .apple), products: [], loadingError: false)
-}
+

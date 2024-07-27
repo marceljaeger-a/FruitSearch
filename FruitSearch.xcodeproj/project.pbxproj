@@ -12,9 +12,16 @@
 		9F5257412C47BA98004CACE6 /* IntelligentTakePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */; };
 		9FA429D72C4E885A00B9617D /* FruitDiscover.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */; };
 		9FA429D92C4EF02A00B9617D /* FoodPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA429D82C4EF02A00B9617D /* FoodPrediction.swift */; };
+		9FA446A42C53DF8B00A7E4C1 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446A32C53DF8B00A7E4C1 /* Ingredient.swift */; };
+		9FA446A62C53EF6000A7E4C1 /* SpoonacularService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446A52C53EF6000A7E4C1 /* SpoonacularService.swift */; };
+		9FA446A82C53EF6F00A7E4C1 /* SpoonacularError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446A72C53EF6F00A7E4C1 /* SpoonacularError.swift */; };
+		9FA446AA2C53EF7F00A7E4C1 /* IngredientID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446A92C53EF7F00A7E4C1 /* IngredientID.swift */; };
+		9FA446AC2C54484B00A7E4C1 /* NutritionOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AB2C54484B00A7E4C1 /* NutritionOverviewView.swift */; };
+		9FA446AE2C54486800A7E4C1 /* MakroNutrientsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */; };
+		9FA446B02C54489000A7E4C1 /* NutrientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */; };
 		9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */; };
 		9FDB68102C512833009E11BA /* FoodProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */; };
-		9FDB68122C51287E009E11BA /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB68112C51287E009E11BA /* NutrientsView.swift */; };
+		9FDB68122C51287E009E11BA /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB68112C51287E009E11BA /* NutritionView.swift */; };
 		9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */; };
 		9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242622C4664B7004EABE1 /* ContentView.swift */; };
 		9FE242652C4664B8004EABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE242642C4664B8004EABE1 /* Assets.xcassets */; };
@@ -25,7 +32,6 @@
 		9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */; };
 		9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */; };
 		9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242812C46F802004EABE1 /* FoodPredictionError.swift */; };
-		9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */; };
 		9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242852C46FA4B004EABE1 /* CameraView.swift */; };
 		9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242882C470B39004EABE1 /* CameraPreviewView.swift */; };
 		9FE2428B2C470B76004EABE1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2428A2C470B76004EABE1 /* Camera.swift */; };
@@ -38,9 +44,16 @@
 		9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentTakePhotoButton.swift; sourceTree = "<group>"; };
 		9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FruitDiscover.mlmodel; sourceTree = "<group>"; };
 		9FA429D82C4EF02A00B9617D /* FoodPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrediction.swift; sourceTree = "<group>"; };
+		9FA446A32C53DF8B00A7E4C1 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9FA446A52C53EF6000A7E4C1 /* SpoonacularService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularService.swift; sourceTree = "<group>"; };
+		9FA446A72C53EF6F00A7E4C1 /* SpoonacularError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularError.swift; sourceTree = "<group>"; };
+		9FA446A92C53EF7F00A7E4C1 /* IngredientID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientID.swift; sourceTree = "<group>"; };
+		9FA446AB2C54484B00A7E4C1 /* NutritionOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionOverviewView.swift; sourceTree = "<group>"; };
+		9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakroNutrientsChart.swift; sourceTree = "<group>"; };
+		9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsListView.swift; sourceTree = "<group>"; };
 		9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FruitDiscover old.mlmodel"; sourceTree = "<group>"; };
 		9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductsGridView.swift; sourceTree = "<group>"; };
-		9FDB68112C51287E009E11BA /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
+		9FDB68112C51287E009E11BA /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		9FE2425D2C4664B7004EABE1 /* FruitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitSearchApp.swift; sourceTree = "<group>"; };
 		9FE242622C4664B7004EABE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +65,6 @@
 		9FE242742C468856004EABE1 /* OpenFoodFactsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsError.swift; sourceTree = "<group>"; };
 		9FE2427F2C46F7C2004EABE1 /* FoodPredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionService.swift; sourceTree = "<group>"; };
 		9FE242812C46F802004EABE1 /* FoodPredictionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionError.swift; sourceTree = "<group>"; };
-		9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoView.swift; sourceTree = "<group>"; };
 		9FE242852C46FA4B004EABE1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		9FE242882C470B39004EABE1 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		9FE2428A2C470B76004EABE1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -70,6 +82,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FA446A22C53DF6600A7E4C1 /* Spoonacular API */ = {
+			isa = PBXGroup;
+			children = (
+				9FA446A32C53DF8B00A7E4C1 /* Ingredient.swift */,
+				9FA446A92C53EF7F00A7E4C1 /* IngredientID.swift */,
+				9FA446A52C53EF6000A7E4C1 /* SpoonacularService.swift */,
+				9FA446A72C53EF6F00A7E4C1 /* SpoonacularError.swift */,
+			);
+			path = "Spoonacular API";
+			sourceTree = "<group>";
+		};
+		9FA446B12C5448E400A7E4C1 /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				9FDB68112C51287E009E11BA /* NutritionView.swift */,
+				9FA446AB2C54484B00A7E4C1 /* NutritionOverviewView.swift */,
+				9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */,
+				9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
 		9FE242542C4664B7004EABE1 = {
 			isa = PBXGroup;
 			children = (
@@ -91,14 +125,14 @@
 			children = (
 				9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */,
 				9FE242622C4664B7004EABE1 /* ContentView.swift */,
-				9F52573E2C47B0D1004CACE6 /* FoodPredictionDetailView.swift */,
-				9FDB68112C51287E009E11BA /* NutrientsView.swift */,
-				9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */,
-				9FE242832C46F9D4004EABE1 /* SelectPhotoView.swift */,
-				9F52573C2C479EFD004CACE6 /* FoodProductView.swift */,
 				9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */,
+				9F52573E2C47B0D1004CACE6 /* FoodPredictionDetailView.swift */,
+				9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */,
+				9F52573C2C479EFD004CACE6 /* FoodProductView.swift */,
+				9FA446B12C5448E400A7E4C1 /* Nutrition */,
 				9FE242872C470B24004EABE1 /* Camera */,
 				9FE242762C468883004EABE1 /* OpenFoodFactsService */,
+				9FA446A22C53DF6600A7E4C1 /* Spoonacular API */,
 				9FE2427E2C46F79E004EABE1 /* MachineLearning */,
 				9FE242642C4664B8004EABE1 /* Assets.xcassets */,
 				9FE242662C4664B8004EABE1 /* Preview Content */,
@@ -220,22 +254,28 @@
 			files = (
 				9FA429D72C4E885A00B9617D /* FruitDiscover.mlmodel in Sources */,
 				9F5257412C47BA98004CACE6 /* IntelligentTakePhotoButton.swift in Sources */,
+				9FA446AE2C54486800A7E4C1 /* MakroNutrientsChart.swift in Sources */,
 				9FE242752C468856004EABE1 /* OpenFoodFactsError.swift in Sources */,
 				9FE242892C470B39004EABE1 /* CameraPreviewView.swift in Sources */,
+				9FA446AA2C53EF7F00A7E4C1 /* IngredientID.swift in Sources */,
 				9FA429D92C4EF02A00B9617D /* FoodPrediction.swift in Sources */,
 				9F52573F2C47B0D1004CACE6 /* FoodPredictionDetailView.swift in Sources */,
 				9FE2426F2C466981004EABE1 /* OpenFoodFactsService.swift in Sources */,
 				9FE242712C468827004EABE1 /* FoodProduct.swift in Sources */,
 				9F52573D2C479EFD004CACE6 /* FoodProductView.swift in Sources */,
+				9FA446B02C54489000A7E4C1 /* NutrientsListView.swift in Sources */,
+				9FA446A62C53EF6000A7E4C1 /* SpoonacularService.swift in Sources */,
 				9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */,
+				9FA446A42C53DF8B00A7E4C1 /* Ingredient.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
 				9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */,
 				9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */,
+				9FA446AC2C54484B00A7E4C1 /* NutritionOverviewView.swift in Sources */,
 				9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */,
 				9FE2428D2C470D0F004EABE1 /* CameraError.swift in Sources */,
-				9FE242842C46F9D4004EABE1 /* SelectPhotoView.swift in Sources */,
-				9FDB68122C51287E009E11BA /* NutrientsView.swift in Sources */,
+				9FA446A82C53EF6F00A7E4C1 /* SpoonacularError.swift in Sources */,
+				9FDB68122C51287E009E11BA /* NutritionView.swift in Sources */,
 				9FE2428B2C470B76004EABE1 /* Camera.swift in Sources */,
 				9FDB68102C512833009E11BA /* FoodProductsGridView.swift in Sources */,
 				9FE242732C46883A004EABE1 /* FoodProductList.swift in Sources */,

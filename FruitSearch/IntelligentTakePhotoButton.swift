@@ -15,22 +15,20 @@ struct IntelligentTakePhotoButton : View {
     @State var predictedFood: FoodPrediction? = nil
     @State var isPredicting = false
     
-    let predictionService = FoodPredictionService()
-    
     var modalColor: AnyShapeStyle {
         camera.latestImage == nil ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(Material.regular)
     }
     
-    var modalshape: AnyShape {
+    var modalShape: AnyShape {
         camera.latestImage == nil ? AnyShape(.circle) : AnyShape(.containerRelative)
     }
     
-    private func predictFood() async {
+    private func onImageChangeAction() async {
         if let image = camera.latestImage {
             isPredicting = true
             do {
+                let predictionService = FoodPredictionService()
                 predictedFood = try await predictionService.predictFruit(in: image)
-                
             } catch {
                 print("Prediction failed")
             }
@@ -46,7 +44,15 @@ struct IntelligentTakePhotoButton : View {
                 VStack(spacing: 15) {
                     HStack {
                         Spacer()
-                        deletePhotoButton
+                        
+                        Button {
+                            camera.latestCGImage = nil
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                        .buttonStyle(.bordered)
+                        .buttonBorderShape(.circle)
+                        .controlSize(.regular)
                     }
                     
                     image
@@ -61,7 +67,11 @@ struct IntelligentTakePhotoButton : View {
                             .font(.title)
                             .bold()
                         
-                        loadFoodProductsButton
+                        Button {
+                            navPath.append(predictedFood)
+                        } label: {
+                            Text("Show details")
+                        }
                     }else {
                         Text("Not identifiable!")
                             .font(.title3)
@@ -91,7 +101,7 @@ struct IntelligentTakePhotoButton : View {
             }
             
         }
-        .background(modalColor.shadow(.drop(radius: 5)), in: modalshape)
+        .background(modalColor.shadow(.drop(radius: 5)), in: modalShape)
         .containerShape(.rect(cornerRadius: 25))
         .padding()
         .transaction(value: camera.latestImage, { transaction in
@@ -102,29 +112,8 @@ struct IntelligentTakePhotoButton : View {
             }
         })
         .task(id: camera.latestImage) {
-            await predictFood()
+            await onImageChangeAction()
         }
-    }
-    
-    var loadFoodProductsButton: some View {
-        Button {
-            if let predictedFood {
-                navPath.append(predictedFood)
-            }
-        } label: {
-            Text("Show details")
-        }
-    }
-    
-    var deletePhotoButton: some View {
-        Button {
-            camera.latestCGImage = nil
-        } label: {
-            Image(systemName: "xmark")
-        }
-        .buttonStyle(.bordered)
-        .buttonBorderShape(.circle)
-        .controlSize(.regular)
     }
 }
 

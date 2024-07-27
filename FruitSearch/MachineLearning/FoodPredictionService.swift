@@ -31,7 +31,7 @@ struct FoodPredictionService {
                 return nil
             }
         
-            return .init(rawValue: target)
+            return .init(rawValue: target, source: image)
         } catch {
             throw FoodPredictionError.failedPrediction
         }
