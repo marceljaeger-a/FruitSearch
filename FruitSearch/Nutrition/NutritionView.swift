@@ -34,7 +34,7 @@ struct NutritionView: View {
                     VStack(alignment: .leading) {
                         Text("\(nutrition.weightPerServing.amount.formatted()) \(nutrition.weightPerServing.unit)")
     
-                        Text("\((nutrition.calories?.amount ?? 0).formatted()) \(nutrition.calories?.unit ?? "kcal")")
+                        Text("\((nutrition.calories.amount).formatted()) \(nutrition.calories.unit)")
                     }
                     
                     Spacer()

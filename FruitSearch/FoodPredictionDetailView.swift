@@ -16,21 +16,22 @@ struct FoodPredictionDetailView : View {
     
     @Environment(\.dismiss) var dismissAction
     
+    init(prediction: FoodPrediction) {
+        self.prediction = prediction
+    }
+    
     var body: some View {
         ZStack {
             Color.clear
             
             if let ingredient {
-                ScrollView {
-                    NutritionView(nutrition: ingredient.nutrition, fruitImage: prediction.source)
-                }
-                .contentMargins(20, for: .scrollContent)
+                IngredientView(image: prediction.source, ingredient: ingredient)
             }else {
                 ProgressView()
                     .progressViewStyle(.circular)
             }
         }
-        .background(Gradient(colors: [.clear, .clear, .accentColor]))
+        .background(Gradient(colors: [.accentColor.opacity(0.5), .clear, .clear, .clear]))
         .background(ignoresSafeAreaEdges: .all)
         .navigationTitle(prediction.name)
         .navigationBarTitleDisplayMode(.inline)

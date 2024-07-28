@@ -27,9 +27,9 @@ extension NutrientListView {
         
         var body: some View {
             Text("\(nutrient.amount.formatted())\(nutrient.unit)")
-                .font(.callout.monospaced())
+                .font(.callout)
             Text(nutrient.name)
-                .font(.callout.monospaced())
+                .font(.callout)
                 .foregroundStyle(.secondary)
         }
     }

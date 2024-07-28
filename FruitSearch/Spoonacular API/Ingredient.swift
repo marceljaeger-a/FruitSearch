@@ -73,39 +73,39 @@ extension Ingredient {
 }
 
 extension Ingredient.Nutrition {
-    var protein: Ingredient.Nutrient? {
+    var protein: Ingredient.Nutrient {
         for nutrient in nutrients {
             if nutrient.name == "Protein" {
                 return nutrient
             }
         }
-        return nil
+        return .init(name: "Protein", amount: 0, unit: "g", percentOfDailyNeeds: 0)
     }
     
-    var carbohydrate: Ingredient.Nutrient? {
+    var carbohydrate: Ingredient.Nutrient {
         for nutrient in nutrients {
             if nutrient.name == "Carbohydrates" {
                 return nutrient
             }
         }
-        return nil
+        return .init(name: "Carbohydrates", amount: 0, unit: "g", percentOfDailyNeeds: 0)
     }
     
-    var fat: Ingredient.Nutrient? {
+    var fat: Ingredient.Nutrient {
         for nutrient in nutrients {
             if nutrient.name == "Fat" {
                 return nutrient
             }
         }
-        return nil
+        return .init(name: "Fat", amount: 0, unit: "g", percentOfDailyNeeds: 0)
     }
     
-    var calories: Ingredient.Nutrient? {
+    var calories: Ingredient.Nutrient {
         for nutrient in nutrients {
             if nutrient.name == "Calories" {
                 return nutrient
             }
         }
-        return nil
+        return .init(name: "Calories", amount: 0, unit: "kcal", percentOfDailyNeeds: 0)
     }
 }

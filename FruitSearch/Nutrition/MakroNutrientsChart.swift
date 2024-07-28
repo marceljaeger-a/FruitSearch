@@ -16,22 +16,17 @@ struct MakroNutrientsChart: View {
     
     var body: some View {
         Chart {
-            SectorMark(angle: .value("Protein", protein.amount), innerRadius: .ratio(0.5), angularInset: 0.5)
-                .foregroundStyle(by: .value("Nutrient", "\(protein.amount.formatted()) \(protein.unit) Protein"))
+            SectorMark(angle: .value("Protein", protein.amount), innerRadius: .ratio(0.6), angularInset: 2)
+                .foregroundStyle(.blue)
                 .cornerRadius(10)
             
-            SectorMark(angle: .value("Carbs", carbs.amount), innerRadius: .ratio(0.5), angularInset: 0.5)
-                .foregroundStyle(by: .value("Nutrient", "\(carbs.amount.formatted()) \(carbs.unit) Carbs"))
+            SectorMark(angle: .value("Carbs", carbs.amount), innerRadius: .ratio(0.6), angularInset: 2)
+                .foregroundStyle(.green)
                 .cornerRadius(10)
             
-            SectorMark(angle: .value("Fat", fat.amount), innerRadius: .ratio(0.5), angularInset: 0.5)
-                .foregroundStyle(by: .value("Nutrient", "\(fat.amount.formatted()) \(fat.unit) Fat"))
+            SectorMark(angle: .value("Fat", fat.amount), innerRadius: .ratio(0.6), angularInset: 2)
+                .foregroundStyle(.orange)
                 .cornerRadius(10)
         }
-        .chartLegend(.visible)
-        .chartLegend(position: .bottom, alignment: .center, spacing: 30)
-        .font(.headline)
-        .scaledToFit()
-        .padding()
     }
 }
