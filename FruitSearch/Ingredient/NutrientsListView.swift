@@ -26,7 +26,7 @@ extension NutrientListView {
         let nutrient: Ingredient.Nutrient
         
         var body: some View {
-            Text("\(nutrient.amount.formatted())\(nutrient.unit)")
+            Text("\(nutrient.amount.nutrientFormatted())\(nutrient.unit)")
                 .font(.callout)
             Text(nutrient.name)
                 .font(.callout)

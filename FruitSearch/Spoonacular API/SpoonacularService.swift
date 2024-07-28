@@ -25,4 +25,20 @@ struct SpoonacularService {
         
         return data
     }
+    
+    func searchIngredient(by searchText: String) async throws -> Ingredient {
+        let url = URL(string: "https://api.spoonacular.com/food/ingredients/search?apiKey=\(Self.apiKey)&query=\(searchText)&number=10")
+        guard let url else { throw SpoonacularError.invalidURL }
+        guard let response = try? await URLSession.shared.data(from: url), let httpResponse = response.1 as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw SpoonacularError.invalidResponse
+        }
+        
+        let decoder = JSONDecoder()
+        let data = try? decoder.decode(Ingredient.self, from: response.0)
+        guard let data else {
+            throw SpoonacularError.invalidData
+        }
+        
+        return data
+    }
 }

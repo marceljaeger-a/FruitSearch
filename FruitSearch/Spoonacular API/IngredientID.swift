@@ -14,6 +14,12 @@ struct IngredientID: Codable {
         switch name {
         case "Apple":
             return .init(value: 9003)
+        case "Banana":
+            return .init(value: 9040)
+        case "Orange":
+            return .init(value: 9200)
+        case "Tomato":
+            return .init(value: 11529)
         default:
             return nil
         }

@@ -12,7 +12,13 @@ struct IngredientView: View {
     let image: Image
     let ingredient: Ingredient
     
-    @State var selectedPortion: Double = 150
+    @State var selectedPortion: Ingredient.WeightPerServing
+    
+    init(image: Image, ingredient: Ingredient) {
+        self.image = image
+        self.ingredient = ingredient
+        self.selectedPortion = ingredient.nutrition.weightPerServing
+    }
     
     var body: some View {
         ScrollView {
@@ -28,11 +34,12 @@ struct IngredientView: View {
                             .shadow(radius: 3)
                         
                         Picker("", selection: $selectedPortion) {
-                            Text("\(ingredient.nutrition.weightPerServing.amount.formatted()) \(ingredient.nutrition.weightPerServing.unit)").tag(ingredient.nutrition.weightPerServing.amount)
+                            Text("\(ingredient.nutrition.weightPerServing.amount.nutrientFormatted()) \(ingredient.nutrition.weightPerServing.unit)")
+                                .tag(ingredient.nutrition.weightPerServing)
                             
                             if ingredient.nutrition.weightPerServing.amount != 100 {
                                 Text("100 g")
-                                    .tag(100)
+                                    .tag(ingredient.nutrition.weightPerServing.with(amount: 100))
                             }
                         }
                         .pickerStyle(.wheel)
@@ -44,13 +51,13 @@ struct IngredientView: View {
                 .containerRelativeFrame(.horizontal, count: 2, span: 2, spacing: 0)
                 
                 GroupBox("Macros") {
-                    MakroNutrientsChart(protein: ingredient.nutrition.protein, carbs: ingredient.nutrition.carbohydrate, fat: ingredient.nutrition.fat)
+                    MakroNutrientsChart(protein: ingredient.nutrition.protein.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion), carbs: ingredient.nutrition.carbohydrate.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion), fat: ingredient.nutrition.fat.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion))
                         .scaledToFit()
                         .shadow(radius: 3)
                         .containerRelativeFrame(.horizontal, count: 2, span: 1, spacing: 0)
                         .overlay {
                             VStack {
-                                Text("\(ingredient.nutrition.calories.amount.formatted())")
+                                Text("\(ingredient.nutrition.calories.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.formatted())")
                                     .bold()
                                 Text("\(ingredient.nutrition.calories.unit)")
                             }
@@ -71,15 +78,15 @@ struct IngredientView: View {
                                 .foregroundStyle(.orange)
                         }
                         GridRow {
-                            Text("\(ingredient.nutrition.protein.amount.formatted())\(ingredient.nutrition.protein.unit)")
+                            Text("\(ingredient.nutrition.protein.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.nutrientFormatted())\(ingredient.nutrition.protein.unit)")
                                 .foregroundStyle(.blue)
                                 .bold()
                             
-                            Text("\(ingredient.nutrition.carbohydrate.amount.formatted())\(ingredient.nutrition.carbohydrate.unit)")
+                            Text("\(ingredient.nutrition.carbohydrate.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.nutrientFormatted())\(ingredient.nutrition.carbohydrate.unit)")
                                 .foregroundStyle(.green)
                                 .bold()
                             
-                            Text("\(ingredient.nutrition.fat.amount.formatted())\(ingredient.nutrition.fat.unit)")
+                            Text("\(ingredient.nutrition.fat.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.nutrientFormatted())\(ingredient.nutrition.fat.unit)")
                                 .foregroundStyle(.orange)
                                 .bold()
                         }
@@ -93,7 +100,7 @@ struct IngredientView: View {
                 .containerRelativeFrame(.horizontal, count: 2, span: 2, spacing: 0)
                 
                 GroupBox("Nutrients") {
-                    NutrientListView(nutrients: ingredient.nutrition.nutrients)
+                    NutrientListView(nutrients: ingredient.nutrition.nutrients.sorted(using: KeyPathComparator(\.name)).map{ $0.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion) })
                 }
                 .backgroundStyle(.regularMaterial)
                 .padding(10)
@@ -110,3 +117,4 @@ struct IngredientView: View {
 #Preview {
     IngredientView(image: .init(systemName: "cup.and.saucer.fill"), ingredient: .init(id: 0, original: "", originalName: "", name: "Apple", amount: 1, unit: "piece", unitShort: "p", unitLong: "piece", possibleUnits: [], estimatedCost: .init(value: 20, unit: "euroe"), consistency: "", shoppingListUnits: [], aisle: "", image: "", nutrition: .init(nutrients: [], properties: [], flavonoids: [], caloricBreakdown: .init(percentProtein: 30, percentFat: 30, percentCarbs: 40), weightPerServing: .init(amount: 150, unit: "g")), categoryPath: []))
 }
+

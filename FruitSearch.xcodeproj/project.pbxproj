@@ -20,6 +20,7 @@
 		9FA446AE2C54486800A7E4C1 /* MakroNutrientsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */; };
 		9FA446B02C54489000A7E4C1 /* NutrientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */; };
 		9FC452A82C557926003341C8 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC452A72C557926003341C8 /* IngredientView.swift */; };
+		9FC452AA2C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC452A92C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift */; };
 		9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */; };
 		9FDB68102C512833009E11BA /* FoodProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */; };
 		9FDB68122C51287E009E11BA /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB68112C51287E009E11BA /* NutritionView.swift */; };
@@ -53,6 +54,7 @@
 		9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakroNutrientsChart.swift; sourceTree = "<group>"; };
 		9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsListView.swift; sourceTree = "<group>"; };
 		9FC452A72C557926003341C8 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		9FC452A92C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDigitsAfterCommaFormat.swift; sourceTree = "<group>"; };
 		9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FruitDiscover old.mlmodel"; sourceTree = "<group>"; };
 		9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductsGridView.swift; sourceTree = "<group>"; };
 		9FDB68112C51287E009E11BA /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 			path = "Spoonacular API";
 			sourceTree = "<group>";
 		};
-		9FA446B12C5448E400A7E4C1 /* Nutrition */ = {
+		9FA446B12C5448E400A7E4C1 /* Ingredient */ = {
 			isa = PBXGroup;
 			children = (
 				9FC452A72C557926003341C8 /* IngredientView.swift */,
@@ -103,8 +105,9 @@
 				9FA446AB2C54484B00A7E4C1 /* NutritionOverviewView.swift */,
 				9FA446AD2C54486800A7E4C1 /* MakroNutrientsChart.swift */,
 				9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */,
+				9FC452A92C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift */,
 			);
-			path = Nutrition;
+			path = Ingredient;
 			sourceTree = "<group>";
 		};
 		9FE242542C4664B7004EABE1 = {
@@ -132,7 +135,7 @@
 				9F52573E2C47B0D1004CACE6 /* FoodPredictionDetailView.swift */,
 				9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */,
 				9F52573C2C479EFD004CACE6 /* FoodProductView.swift */,
-				9FA446B12C5448E400A7E4C1 /* Nutrition */,
+				9FA446B12C5448E400A7E4C1 /* Ingredient */,
 				9FE242872C470B24004EABE1 /* Camera */,
 				9FE242762C468883004EABE1 /* OpenFoodFactsService */,
 				9FA446A22C53DF6600A7E4C1 /* Spoonacular API */,
@@ -269,6 +272,7 @@
 				9FC452A82C557926003341C8 /* IngredientView.swift in Sources */,
 				9FA446B02C54489000A7E4C1 /* NutrientsListView.swift in Sources */,
 				9FA446A62C53EF6000A7E4C1 /* SpoonacularService.swift in Sources */,
+				9FC452AA2C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift in Sources */,
 				9FE242862C46FA4B004EABE1 /* CameraView.swift in Sources */,
 				9FA446A42C53DF8B00A7E4C1 /* Ingredient.swift in Sources */,
 				9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */,

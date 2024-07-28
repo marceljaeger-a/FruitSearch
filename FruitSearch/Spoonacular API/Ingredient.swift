@@ -109,3 +109,19 @@ extension Ingredient.Nutrition {
         return .init(name: "Calories", amount: 0, unit: "kcal", percentOfDailyNeeds: 0)
     }
 }
+
+extension Ingredient.Nutrient {
+    func transform(from currentServing: Ingredient.WeightPerServing, to newServing: Ingredient.WeightPerServing) -> Self {
+        return .init(name: self.name, amount: (self.amount / currentServing.amount) * newServing.amount, unit: self.unit, percentOfDailyNeeds: (self.percentOfDailyNeeds / currentServing.amount) * newServing.amount)
+    }
+}
+
+extension Ingredient.WeightPerServing: Hashable {
+    static var hundredGramm: Self {
+        .init(amount: 100, unit: "g")
+    }
+    
+    func with(amount: Double) -> Self {
+        .init(amount: amount, unit: self.unit)
+    }
+}
