@@ -51,17 +51,21 @@ struct IngredientView: View {
                 .containerRelativeFrame(.horizontal, count: 2, span: 2, spacing: 0)
                 
                 GroupBox("Macros") {
-                    MakroNutrientsChart(protein: ingredient.nutrition.protein.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion), carbs: ingredient.nutrition.carbohydrate.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion), fat: ingredient.nutrition.fat.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion))
-                        .scaledToFit()
-                        .shadow(radius: 3)
-                        .containerRelativeFrame(.horizontal, count: 2, span: 1, spacing: 0)
-                        .overlay {
-                            VStack {
-                                Text("\(ingredient.nutrition.calories.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.formatted())")
-                                    .bold()
-                                Text("\(ingredient.nutrition.calories.unit)")
-                            }
+                    MakroNutrientsChart(
+                        protein: ingredient.nutrition.protein.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion),
+                        carbs: ingredient.nutrition.carbohydrate.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion),
+                        fat: ingredient.nutrition.fat.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion)
+                    )
+                    .scaledToFit()
+                    .shadow(radius: 3)
+                    .containerRelativeFrame(.horizontal, count: 2, span: 1, spacing: 0)
+                    .overlay {
+                        VStack {
+                            Text("\(ingredient.nutrition.calories.transform(from: ingredient.nutrition.weightPerServing, to: selectedPortion).amount.formatted())")
+                                .bold()
+                            Text("\(ingredient.nutrition.calories.unit)")
                         }
+                    }
                     
                     Spacer(minLength: 25)
                     
