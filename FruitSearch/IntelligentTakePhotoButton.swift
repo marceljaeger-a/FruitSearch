@@ -16,7 +16,7 @@ struct IntelligentTakePhotoButton : View {
     @State var isPredicting = false
     
     var modalColor: AnyShapeStyle {
-        camera.latestImage == nil ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(Material.regular)
+        camera.latestImage == nil ? AnyShapeStyle(Gradient(colors: [.accentColor, .secondAccent, .thirdAccent])) : AnyShapeStyle(Material.regular)
     }
     
     var modalShape: AnyShape {

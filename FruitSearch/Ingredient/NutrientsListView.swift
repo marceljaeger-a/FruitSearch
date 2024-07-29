@@ -12,12 +12,12 @@ struct NutrientListView: View {
     let nutrients: Array<Ingredient.Nutrient>
     
     var body: some View {
-        LazyVGrid(columns: [GridItem(alignment: .leading), GridItem(alignment: .leading)], spacing: 15) {
+//        LazyVStack(spacing: 5) {
             ForEach(nutrients, id: \.name) { nutrient in
                 NutrientGridItem(nutrient: nutrient)
             }
-        }
-        .padding()
+//        }
+//        .padding()
     }
 }
 
@@ -26,11 +26,14 @@ extension NutrientListView {
         let nutrient: Ingredient.Nutrient
         
         var body: some View {
-            Text("\(nutrient.amount.nutrientFormatted())\(nutrient.unit)")
-                .font(.callout)
-            Text(nutrient.name)
-                .font(.callout)
-                .foregroundStyle(.secondary)
+            HStack {
+                Text(nutrient.name)
+                    .foregroundStyle(.secondary)
+                
+                Spacer()
+                
+                Text("\(nutrient.amount.nutrientFormatted())\(nutrient.unit)")
+            }
         }
     }
 }

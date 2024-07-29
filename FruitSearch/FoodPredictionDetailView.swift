@@ -31,10 +31,8 @@ struct FoodPredictionDetailView : View {
                     .progressViewStyle(.circular)
             }
         }
-        .background(Gradient(colors: [.accentColor.opacity(0.5), .clear, .clear, .clear]))
+//        .background(Gradient(colors: [.accentColor.opacity(0.5), .clear, .clear, .clear]))
         .background(ignoresSafeAreaEdges: .all)
-        .navigationTitle(prediction.name)
-        .navigationBarTitleDisplayMode(.inline)
         .alert("Loading failed!", isPresented: $loadingError) {
             Button {
                 dismissAction.callAsFunction()
