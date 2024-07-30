@@ -16,10 +16,6 @@ struct FoodPredictionDetailView : View {
     
     @Environment(\.dismiss) var dismissAction
     
-    init(prediction: FoodPrediction) {
-        self.prediction = prediction
-    }
-    
     var body: some View {
         ZStack {
             Color.clear
@@ -31,7 +27,6 @@ struct FoodPredictionDetailView : View {
                     .progressViewStyle(.circular)
             }
         }
-//        .background(Gradient(colors: [.accentColor.opacity(0.5), .clear, .clear, .clear]))
         .background(ignoresSafeAreaEdges: .all)
         .alert("Loading failed!", isPresented: $loadingError) {
             Button {
@@ -41,17 +36,21 @@ struct FoodPredictionDetailView : View {
             }
         }
         .task {
-            let service = SpoonacularService()
-            do {
-                if let id = IngredientID.get(of: prediction.name) {
-                    ingredient = try await service.getIngredient(id: id)
-                }else {
-                    print("Invalid IngredientID")
-                    loadingError = true
-                }
-            }catch {
-                print(error)
+            await loadIngredient()
+        }
+    }
+    
+    func loadIngredient() async {
+        let service = SpoonacularService()
+        do {
+            if let id = IngredientID.get(of: prediction.name) {
+                ingredient = try await service.getIngredient(id: id)
+            }else {
+                print("Invalid IngredientID")
+                loadingError = true
             }
+        }catch {
+            print(error)
         }
     }
 }

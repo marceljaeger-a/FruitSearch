@@ -23,21 +23,6 @@ struct IntelligentTakePhotoButton : View {
         camera.latestImage == nil ? AnyShape(.circle) : AnyShape(.containerRelative)
     }
     
-    private func onImageChangeAction() async {
-        if let image = camera.latestImage {
-            isPredicting = true
-            do {
-                let predictionService = FoodPredictionService()
-                predictedFood = try await predictionService.predictFruit(in: image)
-            } catch {
-                print("Prediction failed")
-            }
-            isPredicting = false
-        }else {
-            predictedFood = nil
-        }
-    }
-    
     var body: some View {
         ZStack(alignment: .bottom) {
             if let image = camera.latestImage {
@@ -58,8 +43,8 @@ struct IntelligentTakePhotoButton : View {
                     image
                         .resizable()
                         .scaledToFit()
-                        .clipShape(.containerRelative)
                         .frame(width: 300)
+                        .clipShape(.containerRelative)
                         
                     
                     if let predictedFood {
@@ -72,6 +57,8 @@ struct IntelligentTakePhotoButton : View {
                         } label: {
                             Text("Show details")
                         }
+                        .buttonStyle(.bordered)
+                        .buttonBorderShape(.capsule)
                     }else {
                         Text("Not identifiable!")
                             .font(.title3)
@@ -115,6 +102,21 @@ struct IntelligentTakePhotoButton : View {
             await onImageChangeAction()
         }
     }
+    
+    private func onImageChangeAction() async {
+        if let image = camera.latestImage {
+            isPredicting = true
+            do {
+                let predictionService = FoodPredictionService()
+                predictedFood = try await predictionService.predictFruit(in: image)
+            } catch {
+                print("Prediction failed")
+            }
+            isPredicting = false
+        }else {
+            predictedFood = nil
+        }
+    }
 }
 
 
@@ -123,11 +125,15 @@ struct TakePhotoButton : View {
     
     @State var isTakingPhoto: Bool = false
     
+    func takePhoto() async {
+        isTakingPhoto.toggle()
+        await camera.take()
+    }
+    
     var body: some View {
         Button {
             Task {
-                isTakingPhoto.toggle()
-                await camera.take()
+                await takePhoto()
             }
         } label: {
             Image(systemName: "camera.shutter.button.fill")
