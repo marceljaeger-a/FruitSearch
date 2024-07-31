@@ -17,7 +17,6 @@ struct CameraView: View {
         Group {
             if let camera {
                 CameraPreviewView(camera: camera)
-                    .ignoresSafeArea(edges: .vertical)
                     .task {
                         do {
                             try await camera.startPreview()
