@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F0D00252C5979F10030204D /* String +ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D00242C5979F10030204D /* String +ext.swift */; };
 		9F0D00272C597AA30030204D /* MacroNutrientsColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D00262C597AA30030204D /* MacroNutrientsColorManager.swift */; };
+		9F0D002B2C5A2E750030204D /* IngredientIDs.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F0D002A2C5A2E750030204D /* IngredientIDs.json */; };
 		9F52573D2C479EFD004CACE6 /* FoodProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573C2C479EFD004CACE6 /* FoodProductView.swift */; };
 		9F52573F2C47B0D1004CACE6 /* FoodPredictionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52573E2C47B0D1004CACE6 /* FoodPredictionDetailView.swift */; };
 		9F5257412C47BA98004CACE6 /* IntelligentTakePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */; };
@@ -22,7 +23,6 @@
 		9FA446B02C54489000A7E4C1 /* NutrientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */; };
 		9FC452A82C557926003341C8 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC452A72C557926003341C8 /* IngredientView.swift */; };
 		9FC452AA2C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC452A92C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift */; };
-		9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */; };
 		9FDB68102C512833009E11BA /* FoodProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */; };
 		9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */; };
 		9FE242632C4664B7004EABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE242622C4664B7004EABE1 /* ContentView.swift */; };
@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		9F0D00242C5979F10030204D /* String +ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +ext.swift"; sourceTree = "<group>"; };
 		9F0D00262C597AA30030204D /* MacroNutrientsColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroNutrientsColorManager.swift; sourceTree = "<group>"; };
+		9F0D002A2C5A2E750030204D /* IngredientIDs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = IngredientIDs.json; sourceTree = "<group>"; };
 		9F52573C2C479EFD004CACE6 /* FoodProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductView.swift; sourceTree = "<group>"; };
 		9F52573E2C47B0D1004CACE6 /* FoodPredictionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPredictionDetailView.swift; sourceTree = "<group>"; };
 		9F5257402C47BA98004CACE6 /* IntelligentTakePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentTakePhotoButton.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		9FA446AF2C54489000A7E4C1 /* NutrientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsListView.swift; sourceTree = "<group>"; };
 		9FC452A72C557926003341C8 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
 		9FC452A92C56C44C003341C8 /* TwoDigitsAfterCommaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDigitsAfterCommaFormat.swift; sourceTree = "<group>"; };
-		9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FruitDiscover old.mlmodel"; sourceTree = "<group>"; };
 		9FDB680F2C512833009E11BA /* FoodProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductsGridView.swift; sourceTree = "<group>"; };
 		9FE2425D2C4664B7004EABE1 /* FruitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE242602C4664B7004EABE1 /* FruitSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitSearchApp.swift; sourceTree = "<group>"; };
@@ -98,6 +98,7 @@
 		9FA446A22C53DF6600A7E4C1 /* Spoonacular API */ = {
 			isa = PBXGroup;
 			children = (
+				9F0D002A2C5A2E750030204D /* IngredientIDs.json */,
 				9FA446A32C53DF8B00A7E4C1 /* Ingredient.swift */,
 				9FA446A92C53EF7F00A7E4C1 /* IngredientID.swift */,
 				9FA446A52C53EF6000A7E4C1 /* SpoonacularService.swift */,
@@ -180,7 +181,6 @@
 				9FE242812C46F802004EABE1 /* FoodPredictionError.swift */,
 				9FA429D82C4EF02A00B9617D /* FoodPrediction.swift */,
 				9FA429D62C4E885A00B9617D /* FruitDiscover.mlmodel */,
-				9FC5154E2C47E11A0020E1E6 /* FruitDiscover old.mlmodel */,
 			);
 			path = MachineLearning;
 			sourceTree = "<group>";
@@ -254,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0D002B2C5A2E750030204D /* IngredientIDs.json in Resources */,
 				9FE242682C4664B8004EABE1 /* Preview Assets.xcassets in Resources */,
 				9FE242652C4664B8004EABE1 /* Assets.xcassets in Resources */,
 			);
@@ -288,7 +289,6 @@
 				9FE242612C4664B7004EABE1 /* FruitSearchApp.swift in Sources */,
 				9F0D00252C5979F10030204D /* String +ext.swift in Sources */,
 				9FE242822C46F802004EABE1 /* FoodPredictionError.swift in Sources */,
-				9FC5154F2C47E11A0020E1E6 /* FruitDiscover old.mlmodel in Sources */,
 				9FE242802C46F7C2004EABE1 /* FoodPredictionService.swift in Sources */,
 				9FE2428D2C470D0F004EABE1 /* CameraError.swift in Sources */,
 				9FA446A82C53EF6F00A7E4C1 /* SpoonacularError.swift in Sources */,
