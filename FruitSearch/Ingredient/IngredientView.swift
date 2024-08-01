@@ -62,8 +62,10 @@ struct IngredientView: View {
                         .tag(ingredient.nutrition.weightPerServing.with(amount: 100))
                 }
             }
-            .pickerStyle(.navigationLink)
+            .pickerStyle(.palette)
+            .containerRelativeFrame(.horizontal, count: 2, span: 2, spacing: 0)
         }
+        .listRowBackground(Color.clear)
     }
     
     var ingredientMacroNutrientsSection: some View {
