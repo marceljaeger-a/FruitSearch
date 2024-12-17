@@ -23,24 +23,4 @@ Das Ergebnis war gut, ausreichend und besser als erwartet...für eine App, die i
 Dieses Projekt hat mir eine bessere Aussicht gegeben, was man alles programmieren kann, und mich noch mehr motiviert, Apps zu entwickeln.
 Es war ein sehr cooles Projekt und es ist sehr erstaunlich, was man alles schaffen kann, wenn man bei einem Mini Hackathon mitmacht, bei dem man um einiges produktiver und konzentrierter arbeitet.
 
-https://github.com/user-attachments/assets/f470f0d9-6d44-4969-b4d7-4da859e7fe0c
-
-## Information über die Technology
-
-### Verwendete Technologien
-- Swift
-- SwiftUI
-- AVFoundation
-- Core ML
-- Create ML
-
-### Machine Learning
-- FruitSearch 1.0.1 verwendet das Model FruitDiscover 5.
-
-#### FruitDiscover 5
-- Neue Herangehensweise für Trainingsdaten.
-- Verbesserte Genauigkeit der Erkennung.
-- Kann Apfel, Banane, Orange und Tomate erkennen.
-
-
 
