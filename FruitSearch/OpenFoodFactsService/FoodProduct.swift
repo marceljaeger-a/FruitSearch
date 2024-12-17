@@ -49,7 +49,7 @@ extension FoodProduct {
         case "A":
             .green
         case "B":
-            .lightGreen
+            .green
         case "C":
             .yellow
         case "D":

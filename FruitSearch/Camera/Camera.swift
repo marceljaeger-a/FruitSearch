@@ -91,10 +91,9 @@ class Camera: NSObject, AVCapturePhotoCaptureDelegate {
     
     func hasAuthorization() async -> Bool {
         let status = AVCaptureDevice.authorizationStatus(for: .video)
-        // Determine whether a person previously authorized camera access.
+        
         var isAuthorized = status == .authorized
-        // If the system hasn't determined their authorization status,
-        // explicitly prompt them for approval.
+        
         if status == .notDetermined {
             isAuthorized = await AVCaptureDevice.requestAccess(for: .video)
         }
@@ -103,6 +102,7 @@ class Camera: NSObject, AVCapturePhotoCaptureDelegate {
     }
     
     func take() async {
-        output.capturePhoto(with: .init(), delegate: self)
+        let config = AVCapturePhotoSettings()
+        output.capturePhoto(with: config, delegate: self)
     }
 }
